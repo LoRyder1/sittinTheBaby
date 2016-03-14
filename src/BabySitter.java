@@ -3,6 +3,7 @@ public class BabySitter {
 
     private final int startTime;
     private final int endTime;
+    private int total;
 
     public BabySitter(int startTime, int endTime) {
         this.startTime = startTime;
@@ -14,4 +15,12 @@ public class BabySitter {
     }
 
 
+    public int calculatePay() {
+        for(int hour = startTime; hour < endTime; hour++) {
+            if (hour < 22) {
+                total += 12;
+            }
+        }
+        return total;
+    }
 }
