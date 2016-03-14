@@ -19,6 +19,8 @@ public class BabySitter {
         for(int hour = startTime; hour < endTime; hour++) {
             if (hour < 22) {
                 total += 12;
+            } else if (hour < 24) {
+                total += 8;
             }
         }
         return total;
