@@ -22,5 +22,9 @@ public class BabySitterTest {
         assertEquals(false, sitting.valid());
     }
 
-
+    @Test
+    public void sittingEndsAfter4AMReturnsFalse() {
+        setSchedule(17, 29);
+        assertEquals(false, sitting.valid());
+    }
 }

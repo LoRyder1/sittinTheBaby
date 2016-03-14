@@ -1,19 +1,17 @@
 
 public class BabySitter {
 
-
     private final int startTime;
-    private final int endTIme;
+    private final int endTime;
 
     public BabySitter(int startTime, int endTime) {
         this.startTime = startTime;
-        this.endTIme = endTime;
+        this.endTime = endTime;
     }
 
     public boolean valid() {
-        if (startTime >= 17) {
-            return true;
-        }
-        return false;
+        return startTime >= 17 && endTime <= 28;
     }
+
+
 }
