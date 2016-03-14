@@ -21,6 +21,8 @@ public class BabySitter {
                 total += 12;
             } else if (hour < 24) {
                 total += 8;
+            } else {
+                total += 16;
             }
         }
         return total;
