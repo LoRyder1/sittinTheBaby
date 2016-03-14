@@ -1,7 +1,6 @@
 
 public class BabySitter {
 
-    private static final int BEDTIME = 22;
     private static final int MIDNIGHT = 24;
     private static final int BASIC_RATE = 12;
     private static final int AFTER_BEDTIME_RATE = 8;
@@ -27,11 +26,11 @@ public class BabySitter {
         return total;
     }
 
-    private void matchRateForHour(int hour) {
-//        InterpretHour hour = new InterpretHour(currentHour);
-        if (hour < BEDTIME) {
+    private void matchRateForHour(int currentHour) {
+        InterpretHour hour = new InterpretHour(currentHour);
+        if (hour.beforeBedtime()) {
             total += BASIC_RATE;
-        } else if (hour < MIDNIGHT) {
+        } else if (hour.beforeMidnight()) {
             total += AFTER_BEDTIME_RATE;
         } else {
             total += AFTER_MIDNIGHT_RATE;
