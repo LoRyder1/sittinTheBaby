@@ -1,6 +1,11 @@
 
 public class BabySitter {
 
+    private static final int BEDTIME = 22;
+    private static final int MIDNIGHT = 24;
+    private static final int BASIC_RATE = 12;
+    private static final int AFTER_BEDTIME_RATE = 8;
+    private static final int AFTER_MIDNIGHT_RATE = 16;
     private final int startTime;
     private final int endTime;
     private int total;
@@ -23,12 +28,12 @@ public class BabySitter {
     }
 
     private void matchRateForHour(int hour) {
-        if (hour < 22) {
-            total += 12;
-        } else if (hour < 24) {
-            total += 8;
+        if (hour < BEDTIME) {
+            total += BASIC_RATE;
+        } else if (hour < MIDNIGHT) {
+            total += AFTER_BEDTIME_RATE;
         } else {
-            total += 16;
+            total += AFTER_MIDNIGHT_RATE;
         }
     }
 }
