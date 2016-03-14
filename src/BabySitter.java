@@ -28,6 +28,7 @@ public class BabySitter {
     }
 
     private void matchRateForHour(int hour) {
+//        InterpretHour hour = new InterpretHour(currentHour);
         if (hour < BEDTIME) {
             total += BASIC_RATE;
         } else if (hour < MIDNIGHT) {
