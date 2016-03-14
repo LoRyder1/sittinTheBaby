@@ -9,7 +9,6 @@ public class InterpretHour {
         this.hour = hour;
     }
 
-
     public boolean beforeBedtime() {
         return hour < BEDTIME;
     }
