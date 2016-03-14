@@ -17,14 +17,18 @@ public class BabySitter {
 
     public int calculatePay() {
         for(int hour = startTime; hour < endTime; hour++) {
-            if (hour < 22) {
-                total += 12;
-            } else if (hour < 24) {
-                total += 8;
-            } else {
-                total += 16;
-            }
+            matchRateForHour(hour);
         }
         return total;
+    }
+
+    private void matchRateForHour(int hour) {
+        if (hour < 22) {
+            total += 12;
+        } else if (hour < 24) {
+            total += 8;
+        } else {
+            total += 16;
+        }
     }
 }
